@@ -1,9 +1,14 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, PageProps } from 'gatsby';
 
 import { rhythm, scale } from '../utils/typography';
 
-const Layout = ({ location, title, children }) => {
+export interface LayoutProps {
+  location: PageProps['location'];
+  title: string;
+}
+
+const Layout: React.FC<LayoutProps> = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
   let header;
 
