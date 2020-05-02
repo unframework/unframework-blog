@@ -3,8 +3,9 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
+import { SitePageProps } from '../components/Site';
 
-const NotFoundPage = ({ data, location }) => {
+const NotFoundPage: React.FC<SitePageProps> = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
 
   return (

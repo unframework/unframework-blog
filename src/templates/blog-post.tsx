@@ -5,8 +5,13 @@ import Bio from '../components/Bio';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import { rhythm, scale } from '../utils/typography';
+import { SitePageProps } from '../components/Site';
 
-const BlogPostTemplate = ({ data, pageContext, location }) => {
+const BlogPostTemplate: React.FC<SitePageProps> = ({
+  data,
+  pageContext,
+  location
+}) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
   const { previous, next } = pageContext;
