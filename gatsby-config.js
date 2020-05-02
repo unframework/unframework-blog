@@ -1,14 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `unframework`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`
+      name: `Nick Matantsev`,
+      summary: `technologist and front-end architect`
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `Personal website and blog of Nick Matantsev.`,
+    siteUrl: `https://unframework.com/`,
     social: {
-      twitter: `kylemathews`
+      twitter: `unframework`,
+      github: `unframework`
     }
   },
   plugins: [
@@ -63,8 +64,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Personal Website of Nick Matantsev`,
+        short_name: `unframework`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
