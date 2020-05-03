@@ -5,11 +5,18 @@ import Bio from '../components/Bio';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import { rhythm } from '../utils/typography';
-import { SitePageProps } from '../components/Site';
+import { SitePageContext, SitePageData, SiteNode } from '../components/Site';
 
-const BlogIndex: React.FC<SitePageProps> = ({ data, location }) => {
+const BlogIndex: React.FC<PageProps<
+  SitePageData & {
+    allBlogMarkdownRemark: {
+      edges: { node: SiteNode }[];
+    };
+  },
+  SitePageContext
+>> = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
-  const posts = data.allMarkdownRemark.edges;
+  const posts = data.allBlogMarkdownRemark.edges;
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -54,7 +61,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allBlogMarkdownRemark: allMarkdownRemark(
+      filter: { fields: { sourceInstanceName: { eq: "blog" } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           excerpt

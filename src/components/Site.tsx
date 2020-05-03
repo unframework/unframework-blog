@@ -28,15 +28,16 @@ export interface SitePageData {
     };
   };
   markdownRemark: SiteNode;
-  allMarkdownRemark: {
-    edges: { node: SiteNode }[];
-  };
 }
 
 export interface SitePageContext {
   slug: string;
+}
+
+export interface SiteBlogPageContext extends SitePageContext {
   previous: SiteNode | null;
   next: SiteNode | null;
 }
 
 export type SitePageProps = PageProps<SitePageData, SitePageContext>;
+export type SiteBlogPageProps = PageProps<SitePageData, SiteBlogPageContext>;

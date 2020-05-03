@@ -5,9 +5,9 @@ import Bio from '../components/Bio';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 import { rhythm, scale } from '../utils/typography';
-import { SitePageProps } from '../components/Site';
+import { SiteBlogPageProps } from '../components/Site';
 
-const BlogPostTemplate: React.FC<SitePageProps> = ({
+const BlogPostTemplate: React.FC<SiteBlogPageProps> = ({
   data,
   pageContext,
   location
